@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+*{	margin:0; padding:0;}		/*Detta nollställer alla margins och paddings i hela html-dokumentet så att du kan styra detta individuellt sedan 
+								och inte behöver påverkas av systemet.*/
+
+html{	font-size:125%;}		/*Tack vare dessa två rader motsvarar 1 em 10 px.*/
+body{	font-size: 50%;}
+
+/*-------------------------------------------------------------Grundläggande CSS-design----------------------------------------------------------*/
+
+body{	background:#FFFFFF url(bg.jpg);							/*Bestämmer sidans bakgrundsbild.*/
+		color:#444444;}											/*Bestämmer standardfärg på text om inget annat sätts.*/
+
+h1{		font-family:Georgia, "Times New Roman", Times, serif;		/*Bestämmer huvudrubrikens utseende.*/
+		font-size:2.1em;
+		text-align:center;}
+
+p{		font-family:Verdana, Geneva, sans-serif;				/*Bestämmer stycketextens utseende.*/
+		font-size:1.3em;
+		line-height:150%; 
+		text-align:justify;
+		padding:5px;}
+
+a{		color:#B67AE0;											/*Bestämmer de ordinarie länkarnas utseende.*/
+		font-weight:bold;}
+
+img{	border:0px;}											/*Bestämmer att inga bilder skall som standard ha någon ram.*/
+
+hr{		width:600px;											/*Detta är en vertikal linje som jag använder som avdelare.*/
+		height:1px;
+		margin-top:15px;
+		border-width:0px;
+		color:#333333;
+		background-color:#999999;}
+
+table{	margin: 20px auto;										/*Bestämmer utseendet på mitt formulär.*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:1.3em;}
+		
+
+/*-------------------------------------------------------------------Klasser---------------------------------------------------------------------*/
+
+.ingress{	padding-top:18px;}		/*.ingress är en klass med subklasser som gör om ett vanligt stycke till en formaterad ingress med en anfang 
+									och versaler på första raden.*/
+
+.ingress:first-letter{	font-size:3em;
+						padding:0.2em 0.1em 0em 0.1em;
+						margin: 0em 0.1em 0em 0em;
+						float:left;}
+
+.ingress:first-line{	font-variant:small-caps;}
+
+
+.no_float{	clear:both;}		/*Denna klass används för nollställa float på detta och efterföljande objekt.*/
+
+.float_right{	float:right;}		/*Denna klass används för att något skall hamna till höger*/
+
+.float_left{	float:left;}		/*Denna klass används för att något skall hamna till vänster*/
+
+img.float_left{	margin: 10px 20px 0px 10px;}		/*När en bild placeras till vänster justeras dessutom dess marginaler.*/
+			
+img.float_right{	margin: 10px 10px 0px 20px;}		/*När en bild placeras till höger justeras dessutom dess marginaler.*/
+
+.formknapp{	font-family:Verdana, Geneva, sans-serif;		/*Denna klass styr utseendet på mitt formulär.*/
+			font-size:1.1em;
+			background-color:#FFFFFF;
+			padding:5px;
+			margin:10px;
+			-moz-border-radius:5px;		/*Denna rad ska göra så att hörn blir rundade i Firefox.*/
+			border-radius:5px;			/*Denna rad ska göra så att hörn blir rundade i IE9 och resterande webbläsare.*/
+			border: solid 1px #ABADB3;}
+
+.no_script{	display:block;		/*Denna klass används för de länkar som visas om man inte använder JavaScript på sidan.*/
+			font-size:1.6em;
+			margin:20px 20px;}
+
+p.center{	text-align:center;}		/*Denna klass används för att få ett centrerat stycke på min tack-sida.*/
+
+
+/*-----------------------------------------------------------------------Boxar-------------------------------------------------------------------*/
+
+#paperhead{	width:718px;
+			margin:auto;
+			height:10px;
+			background:url(papertop.png) no-repeat top;}
+
+#wrapper{	width:718px;				/*Denna box omsluter alla andra boxar utom paperhead o -foot och gör att de blir centrerade på sidan. */
+			margin: 0px auto;						/*Den styr även så att pappret får en skugga.*/
+			background:url(paper.png) repeat-y;}
+
+#paper{		width:700px;		
+			background:url(wavelogo.jpg) no-repeat top;
+			margin: 0px auto;
+			background-color:#FFFFFF;}
+
+#paperfoot{	width:718px;
+			margin:0px auto;
+			height:20px;
+			background:url(paperbottom.png) no-repeat top;}
+			
+#logga{		width:625px;		/*Denna box innehåller min logga.*/
+			height:70px;
+			padding: 88px 0px 0px 75px;}
+
+#innehall{		width:600px;		/*Denna box innehåller sidans innehåll.*/
+				min-height:340px;
+				padding:20px 50px;
+				font-family:Verdana, Geneva, sans-serif;}
+
+#innehall a:visited{	color:#FE80FB;}
+
+#innehall a:hover{		text-decoration:none;}
+
+#innehall ul{	margin:20px 27px;		/*Bestämmer listors utseende.*/
+				font-size:1.3em;
+				line-height:150%;}
+
+#innehall li{	margin-bottom:10px;}
+
+#innehall ul ul{	font-size:1em;
+					line-height:150%;}
+
+#innehall ul ul li{	margin:10px -5px;}
+
+#sidfot{	width:600px;		/*Denna box innehåller min sidfot och har speciella egenskaper för <hr> och <p>.*/
+			min-height:65px;
+			padding:0px 50px;}
+
+#sidfot hr{	margin-top:0px;}
+
+#sidfot p{	text-align:center;
+				color:#999999;}
+
+#portfolio img{	margin:10px 2px 0px 10px;}		/*Denna box bestämmer bildernas marginaler i portfolion.*/
+#portfolio a{	text-decoration:none;}		/*Denna klass tar bort ett litet streck som blev under bilderna i min portfolio.*/
+
+#portfolio_text{	width:387px;				/*Denna box innehåller texten i min portfolio.*/
+			margin:0px 0px 0px 8px;
+			float:right;}
+
+/*-----------------------------------------------------------------Box till JavaScriptet---------------------------------------------------------*/
+
+#sddm{	width:45.8em;		/*Denna box innehåller designen till min meny.*/
+		margin:auto;
+		padding:0;
+		z-index:30;
+		min-height:42px;}
+
+#sddm li{		margin:0;		/*<li> styr designen på huvudmenyn.*/
+				padding:0;
+				list-style:none;
+				float:left;
+				font-size:2.0em;
+				font-family:Tahoma, Geneva, sans-serif;}
+
+#sddm li a {		display:block;
+					margin:5px 10px 0px;
+					padding:0px;
+					font-weight:100;
+					text-align:center;
+					text-decoration:none;}
+
+#sddm li a:hover{	background-image:url(button.png);
+					color:#FFFFFF;
+					-moz-border-radius:10px;	/*Denna rad ska göra så att hörn blir rundade i Firefox.*/
+					border-radius:10px;			/*Denna rad ska göra så att hörn blir rundade i IE9 och resterande webbläsare.*/
+					margin:5px 0px 0px; 
+					padding:0px 10px;}
+
+#sddm div{			position:absolute;		/*<div> styr designen på undermenyn.*/
+					visibility:hidden;
+					background-image:url(button.png);
+					color:#FFFFFF;
+					-moz-border-radius:10px;	/*Denna rad ska göra så att hörn blir rundade i Firefox.*/
+					border-radius:10px;			/*Denna rad ska göra så att hörn blir rundade i IE9 och resterande webbläsare.*/
+					width:6em;
+					margin:0px;
+					padding:0px 5px 5px;}
+	
+#sddm div a{		position:relative;
+					display:block;
+					white-space:nowrap;
+					text-align:center;
+					text-decoration:none;
+					color:#FFFFFF;}
+
+#sddm div a:hover{	background-image:url(button2.png);
+					color:#B67AE0;}
